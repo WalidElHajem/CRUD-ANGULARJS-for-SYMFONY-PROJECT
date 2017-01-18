@@ -1,0 +1,23 @@
+
+
+<a ui-sref="newAnimal" class="btn-primary btn-lg nodecoration">Add New Animal</a>
+<label>Search: <input ng-model="searchText"></label>
+
+
+<table class="table animaltable">
+    
+ 
+
+    <tr>
+        <td><h3>All Animals</h3></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="animal in animals |  filter:searchText">
+        <td>{{animal.nom}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewAnimal({id:animal.id})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteAnimal(animal)">Delete</a>
+        </td>
+    </tr>
+    
+</table>
